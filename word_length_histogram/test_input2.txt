@@ -1,0 +1,204 @@
+**Título.**
+
+*Front-end* de la aplicación web de Servicios ZOI
+
+Changes
+
+**Planteamiento del problema.**
+
+Servicios ZOI cuenta actualmente con una aplicación desarrollada sobre
+el manejador de contenidos *Wordpress*. Sin embargo, esta herramienta
+fue desarrollada como un producto mínimo viable (MVP) para probar el
+modelo de negocio y ya no se adapta a las necesidades de crecimiento de
+la empresa. La plataforma actual es un *ecommerce* genérico, con
+limitaciones de extensibilidad y mantenibilidad.
+
+Servicios ZOI es un emprendimiento joven que necesita reaccionar ante
+las necesidades del mercado y explorar y validar hipótesis rápidamente,
+por lo cual requiere una plataforma sobre la cual se puedan desarrollar
+funcionalidades originales, ágilmente, para lo cual la extensibilidad y
+la mantenibilidad son fundamentales.
+
+Adicional a las soluciones originales que desea plantear la empresa,
+también es necesario desarrollar módulos comunes de una aplicación web,
+cómo el manejo de registro de usuario y sesiones, el manejo de pagos y
+facturaciones, y un módulo de administración para que la empresa pueda
+corregir errores y brindar soporte a los usuarios.
+
+En líneas generales, Servicios ZOI es un mercado de paquetes de turismo
+de aventura y su modelo de negocios consiste en establecer alianzas con
+operadores turísticos para que publiquen paquetes en la aplicación web,
+cobrándoles una comisión por cada venta realizada a través de la
+plataforma. A cambio de esta comisión, los operadores obtienen un canal
+de ventas por internet y un impulso en su mercadeo, que los libera de
+labores como el procesamiento de pagos y el mercadeo de su oferta.
+
+A grandes rasgos, la empresa actúa como un intermediario entre
+consumidores y operadores turísticos, por lo que la aplicación debe
+atender dos casos de uso, el de los operadores y el de los consumidores.
+
+Los operadores necesitan administrar los paquetes que ofrecen, es decir,
+poder crear, editar y eliminar paquetes, administrar cupos y fechas
+disponibles, así como recibir y responder a solicitudes de reservación.
+Por otra parte, los consumidores deben poder explorar las opciones que
+tienen disponibles de forma que puedan encontrar paquetes turísticos que
+le sean interesantes y puedan informarse debidamente para poder
+comprarlos a través de la plataforma.
+
+**Delimitación y alcance.**
+
+Para solucionar las limitaciones de la plataforma, la empresa decidió
+desarrollar una nueva plataforma, basada en tecnologías más flexibles y
+escalables y aprovechando los conocimientos de mercado adquiridos con la
+plataforma antigua. Para esto se definió una arquitectura que consiste
+en un *back-end* que expone una interfaz http (API) y una aplicación web
+cliente, completamente independiente que consume este API.
+
+El objetivo planteado es el lanzamiento de una aplicación que reemplace
+completamente la aplicación actual entre Julio y Septiembre de 2016. Las
+funcionalidades específicas que entren en este lanzamiento pueden
+variar, ya que parte del proyecto es definir estas funcionalidades pero
+tentativamente, la aplicación ofrecerá a los consumidores la posibilidad
+de explorar la oferta de actividades, mediante filtros y categorías, ver
+una descripción detallada de cada actividad, verificar su precio y
+disponibilidad, solicitar al proveedor una reservación y pagarla. A los
+proveedores les ofrecerá la posibilidad de cargar actividades en la
+plataforma con sus descripciones y fechas de disponibilidad, y recibir
+solicitudes de reservación y aceptarlas o rechazarlas.
+
+El estudiante realizará el proyecto como parte de un equipo de
+desarrollo, asumiendo la responsabilidad del *front-end*, es decir la
+parte de la aplicación visible para el usuario final y comprende la
+comunicación con el *back-end,* y la interfaz de usuario. Para esto
+deberá participar en la selección de las herramientas y librerías a
+utilizar, en la planificación del proyecto, asumir una carga importante
+del desarrollo, colaborar con el equipo de desarrollo del *back-end*
+para definir los requerimientos que debe satisfacer el API y colaborar
+en la gestión del equipo de *front-end*.
+
+**Objetivo general.**
+
+Implementar el *front-end* de la aplicación web de la empresa.
+
+**Objetivos específicos.**
+
+-   Definir los requerimientos iniciales de la aplicación según las
+    necesidades de la empresa.
+
+-   Diseñar las funcionalidades del *front-end* de la aplicación en base
+    a los requerimientos.
+
+-   Desarrollar el *front-end* de la aplicación según los
+    requerimientos diseñados.
+
+-   Validar las funcionalidades desarrolladas.
+
+**\
+**
+
+**Metodología de investigación.**
+
+El enfoque de la investigación es cualitativo, ya que es necesaria la
+interpretación del autor para analizar las necesidades de la empresa y
+aplicar soluciones adecuadas a las mismas en el desarrollo de la
+aplicación. En primer lugar, para entender el problema en profundidad y
+poder desarrollar soluciones es importante entender el modelo de
+negocios de la empresa, su estructura organizacional y las expectativas
+de su gerencia para la aplicación. De forma similar es importante
+entender la perspectiva de otras partes involucradas, como los
+proveedores que ofrecerán sus servicios a través de la aplicación y los
+consumidores que la utilizarán para reservar y comprar actividades.
+
+Luego de desarrollada la aplicación, se procede a validar los
+resultados, esta es la parte más cuantitativa de la investigación, ya
+que se pueden realizar pruebas de satisfacción con los usuarios finales,
+sin embargo, la base de usuarios en primera instancia será limitada y
+servirá principalmente para obtener información para mejorar
+incrementalmente la calidad de la aplicación.
+
+La investigación está ligada a la metodología de desarrollo, por lo que
+no sigue un orden estrictamente secuencial, ya que cada uno de estos
+pasos se realiza cada vez que se realiza un *sprint* de desarrollo,
+estos pasos son: Exploración del contexto: A través de entrevistas,
+discusiones y prototipos determinar las necesidades que debe cubrir la
+aplicación y las funcionalidades requeridas para cubrir estas
+necesidades.
+
+1.  Revisión de la literatura y documentación: Recopilar y estudiar
+    técnicas y tecnologías útiles para desarrollar las
+    funciones requeridas.
+
+2.  Especificación de las funcionalidades: Generar un documento que
+    detalle las funcionalidades a desarrollar.
+
+3.  Desarrollo de las funcionalidades: Desarrollar las funcionalidades
+    especificadas de la aplicación.
+
+4.  Verificación y validación: Determinar si el software desarrollado
+    cumple con la especificación y si cubre efectivamente las
+    necesidades de la empresa y de los usuarios.
+
+**Metodología de desarrollo.**
+
+En primer lugar, se espera implementar una metodología de desarrollo
+ágil, en principio basada en SCRUM, con el objetivo de lanzar una
+aplicación con funcionalidad limitada pero completa por si sola al final
+de cada iteración. Las iteraciones serán de un mes de duración.
+Adicionalmente, se espera implementar *continuous delivery* que quiere
+decir que una vez que una funcionalidad esté lista, se lanza a un
+servidor de pre-producción, desde el cual se pueden realizar
+validaciones con usuarios reales y verificar que el código está listo
+para producción.
+
+Para cuidar la calidad del código se utilizarán los principios de
+desarrollo impulsado por pruebas (TDD), que consiste en programar
+pruebas automatizadas para las funcionalidades a desarrollar antes de
+empezar a programar la funcionalidad. También se realizarán revisiones
+de código entre miembros del equipo, periódicamente y al finalizar cada
+funcionalidad.
+
+**2. Lenguajes y tecnologías.**
+
+La aplicación ya cuenta con una estructura y un ambiente de desarrollo
+definido previamente, que consiste básicamente en tres lenguajes de
+transpilación: TypeScript para JavaScript, SASS para CSS (hojas de
+estilo) y Jade para HTML y un sistema de pruebas basado en el
+*framework* (marco) Jasmine.
+
+**3. Planificación.**
+
+Luego se realizarán cuatro *sprints* de desarrollo, basados en SCRUM,
+antes del lanzamiento, así como las respectivas planificaciones y
+cierres de cada uno. El estudiante participará significativamente, tanto
+en la planificación y priorización de las funcionalidades a desarrollar,
+como en el desarrollo de las funcionalidades y en el cierre de los
+*sprints* en la evaluación de los resultados, que servirá para corregir
+errores en la metodología y en el desarrollo para los siguientes
+sprints.
+
+Funcionalidades mínimas a desarrollar por sprint:
+
+**1er *sprint*:** Acceso a la aplicación: registro de cuentas e inicio
+de sesión.
+
+**2do *sprint: ***Perfiles de usuario: ver perfil de proveedor y
+consumidor, editar perfil como proveedor y como consumidor.
+
+**3er *sprint*:** Carga de actividades: cargar actividad en la
+plataforma como proveedor. Reservación de actividades.
+
+**4to *sprint*:** Búsqueda de actividades: listar y filtrar las
+actividades según diferentes criterios.
+
+Una vez finalizado el desarrollo se dedicarán dos semanas para preparar
+el lanzamiento de la aplicación, realizando las últimas pruebas de
+aceptación, corrigiendo defectos y verificando el ambiente de
+producción.
+
+**\
+**
+
+**Cronograma de trabajo.**
+
+![](media/image1.emf){width="5.941666666666666in"
+height="3.8545188101487313in"}
