@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 /* Print fahrenheit - celsius table for fahr = [0...300] */
 #define LOWER 0
 #define UPPER 300
