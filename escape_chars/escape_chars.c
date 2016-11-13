@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * Ex 3-2a: Change char representation of tab and newline to readable string
+ */
+
 void escape_chars(char target[], char source[]);
 
 int main()

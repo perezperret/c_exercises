@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * Ex 3-2b: Change visible string representation of tab and newline to correct chars
+ */
+
 void apply_chars(char target[], char source[]);
 
 int main()
