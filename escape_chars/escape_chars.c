@@ -22,11 +22,11 @@ void escape_chars(char target[], char source[])
   while (source[j] != '\0') {
     switch (source[j]) {
     case '\n':
-      target[i] = '/';
+      target[i] = '\\';
       target[++i] = 'n';
       break;
     case '\t':
-      target[i] = '/';
+      target[i] = '\\';
       target[++i] = 't';
       break;
     default:
