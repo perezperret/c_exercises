@@ -4,20 +4,25 @@
 #define MAXLINE 1000
 
 int get_line(char vector[], int max_line);
-int strindex(char substr[], char supstr[], int n);
+int strindex(char substr[], char supstr[]);
 
-int main()
+// TODO: use test framework
+int test_get_line()
 {
   char vector[MAXLINE];
   while (get_line(vector, MAXLINE)) {
     printf("%s-", vector);
   }
   printf("\n");
+  return 0;
+}
 
+int test_strindex()
+{
   char * supstr = "I once had very good friend with only one eye in his face"; // length = 56
   char * substr = "one"; // index = 38
-  int len = 56;
-  printf("%d\n", strindex(substr, supstr, len));
+  printf("%d\n", strindex(substr, supstr));
+  return 0;
 }
 
 int get_line(char vector[], int max_line)
@@ -40,11 +45,12 @@ int get_line(char vector[], int max_line)
   return i;
 }
 
-int strindex(char substr[], char supstr[], int n) {
+int strindex(char substr[], char supstr[])
+{
   int i, j;
-  int index = -1;
+  i = j = 0;
   bool found = 0;
-  for (i = 0; i < n; i++) {
+  while (supstr[i] != '\0') {
     if (supstr[i] == substr[0]) {
       found = 1;
       j = 0;
@@ -58,6 +64,7 @@ int strindex(char substr[], char supstr[], int n) {
       if (found)
         return i;
     }
+    i ++;
   }
-  return index;
+  return -1;
 }
