@@ -2,12 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* Binary search excercises from C Prog Lang */
+/* TODO: benchmark is being performed on unsorted array */
+
 int binsearch_a(int x, int v[], int n);
 int binsearch_b(int x, int v[], int n);
 void get_test_data(int len, int v[]);
 
 int main() {
 
+  // TODO: move to function
   srand(time(NULL));
   int len = 1000000;
   int v[len];
