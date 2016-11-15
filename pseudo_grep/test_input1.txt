@@ -1,0 +1,5 @@
+This is
+A test input
+For my own
+Implementation
+Of `getline(int v[], int n)`
