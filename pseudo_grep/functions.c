@@ -29,16 +29,12 @@ int get_line(char vector[], int max_line)
 {
   int i, c;
   i = 0;
-  // Get chars until newline
-  while ((c = getchar()) != '\n' && i < max_line) {
-    // Break on end of file
-    if (c == EOF) {
-      return 0;
-    }
-    // Copy valid char
-    vector[i] = c;
-    ++ i;
-  }
+  // Copy chars until newline or end of file
+  while ((c = getchar()) != '\n' && c != EOF && i < max_line)
+    vector[i++] = c;
+  // Count closing empty line
+  if (c == '\n')
+    vector[i++] = c;
   // Close string
   vector[i] = '\0';
   // Return string length
