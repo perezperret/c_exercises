@@ -40,26 +40,41 @@ int get_line(char vector[], int max_line)
   // Return string length
   return i;
 }
-
+// int i, j, k;
+// bool found = 0;
+// for (i = 0; s[i] != '\0'; i++) {
+//   for (j = i, k = 0; p[k] != '\0' && s[j] == t[k]; j++, k++)
+//     ;
+//   if (k > 0 && t[k] == '\0')
+//     return i;
+// }
+// return -1;
 int strindex(char substr[], char supstr[])
 {
   int i, j;
   i = j = 0;
   bool found = 0;
+  // Iterate over source
   while (supstr[i] != '\0') {
+    // If first char found
     if (supstr[i] == substr[0]) {
       found = 1;
       j = 0;
+      // Iterate over pattern
       while (substr[j] != '\0') {
+        // If pattern fails break and notify outer loop through found
         if (substr[j] != supstr[i + j]) {
           found = 0;
           break;
         }
         ++ j;
       }
+      // If first char was found, !found wasn't notified
+      // and whole pattern was iterated, it was found
       if (found)
         return i;
     }
+    // Continue loop if first char wasn't found
     i ++;
   }
   return -1;
