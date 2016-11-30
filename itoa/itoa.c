@@ -4,7 +4,7 @@
 /* Two implementations of simple int to char array conversion */
 
 void itoa_loop(int input, char output[], int length);
-void itoa_recursive(int input);
+int itoa_recursive(int input, char output[], int lenght);
 void reverse(char input[], int length);
 
 int main()
@@ -16,21 +16,21 @@ int main()
   itoa_loop(input, output, MAXLEN);
   printf("%s\n", output);
 
-  itoa_recursive(input);
+  itoa_recursive(input, output, MAXLEN);
+  printf("%s\n", output);
   putchar('\n');
 }
 
-void itoa_recursive(int c)
+int itoa_recursive(int c, char o[], int n)
 {
-  if (c < 0) {
-    putchar('-');
-    c = -c;
-  }
+  int p = 0;
 
   if (c / 10) {
-    itoa_recursive(c / 10);
+    p = itoa_recursive(c / 10, o, n);
   }
-  putchar((c % 10) + '0');
+
+  o[p] = (c % 10) + '0';
+  return p + 1;
 }
 
 void itoa_loop(int c, char o[], int n)
