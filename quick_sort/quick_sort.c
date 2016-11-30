@@ -1,47 +1,61 @@
 #include <stdio.h>
 
-void quick_sort(int v[], int left, int right);
+void quick_sort(int v[], int hi, int lo);
+int partition(int v[], int hi, int lo);
 void swap(int v[], int i, int j);
+void print_arr(int v[], int n);
 
-/* quicksort alg: sort v[left]...v[right] into asc order */
+/* quicksort alg: sort v[hi]...v[lo] into asc order */
 
 int main()
 {
   int o[] = { 3, 5, 12, 1, 4, 6 };
-  int n = 5;
+  int n = 6;
 
-  for (int i = 0; i < 5; i ++) {
-    printf("%d", o[i]);
-  }
+  printf("presort\n");
+  print_arr(o, n);
   putchar('\n');
 
+  quick_sort(o, 0, n - 1);
 
-  quick_sort(o, 0, 5);
-
-  for (int i = 0; i < 6; i ++) {
-    printf("%d", o[i]);
-  }
+  printf("postsort\n");
+  print_arr(o, n);
   putchar('\n');
 }
 
-void quick_sort(int v[], int left, int right)
+void quick_sort(int v[], int lo, int hi)
 {
-  int i, last;
-
-  if (left >= right) /* do nothing if array contains fewer than two elements */
-    return;
-  swap(v, left, (left + right) / 2); /* move partition elem to v[0] */
-  last = left;
-
-  for (i = left + 1; i <= right; i++) /* partition */
-    if (v[i] < v[left])
-      swap(v, ++last, i);
-  swap(v, left, last);
-
-  quick_sort(v, left, last - 1); /* restore partition element */
-  quick_sort(v, last + 1, right);
+  int p;
+  if (lo < hi) {
+    p = partition(v, lo, hi);
+    quick_sort(v, lo, p - 1);
+    quick_sort(v, p + 1, hi);
+  }
 }
 
+void print_arr(int a[], int n)
+{
+  for (int i = 0; i < n; i ++) {
+    printf("%d\t", a[i]);
+  }
+  putchar('\n');
+}
+
+int partition(int v[], int lo, int hi)
+{
+  int pivot = v[hi];
+  int i = lo, j = lo;
+
+  for (; j <= hi - 1; j ++) {
+    if (v[j] <= pivot) {
+      swap(v, i, j);
+      i ++;
+    }
+  }
+
+  swap(v, i, hi);
+  return i;
+}
 
 void swap(int v[], int i, int j)
 {
